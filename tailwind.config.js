@@ -7,15 +7,6 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      gray: {
-        100: "#F2F1E9",
-        300: "#D9D7D0",
-        500: "#8C8B87",
-        700: "#595959",
-        900: "#0D0D0D",
-      },
-    },
     extend: {
       fontFamily: {
         sans: [
@@ -25,7 +16,20 @@ module.exports = {
           ...defaultTheme.fontFamily.sans,
         ],
       },
-      colors: {},
+      colors: {
+        gray: {
+          50: "#F3F2F2",
+          100: "#E9E8E8",
+          200: "#D2D2D0",
+          300: "#B9B8B6",
+          400: "#A3A29F",
+          500: "#8C8B87",
+          600: "#706F6B",
+          700: "#535350",
+          800: "#393937",
+          900: "#1D1C1B",
+        },
+      },
     },
   },
   plugins: [],
