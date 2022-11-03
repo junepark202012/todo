@@ -1,4 +1,19 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colorPalette = {
+  gray: {
+    50: "#F3F2F2",
+    100: "#E9E8E8",
+    200: "#D2D2D0",
+    300: "#B9B8B6",
+    400: "#A3A29F",
+    500: "#8C8B87",
+    600: "#706F6B",
+    700: "#535350",
+    800: "#393937",
+    900: "#1D1C1B",
+  },
+};
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -17,20 +32,13 @@ module.exports = {
         ],
       },
       colors: {
-        gray: {
-          50: "#F3F2F2",
-          100: "#E9E8E8",
-          200: "#D2D2D0",
-          300: "#B9B8B6",
-          400: "#A3A29F",
-          500: "#8C8B87",
-          600: "#706F6B",
-          700: "#535350",
-          800: "#393937",
-          900: "#1D1C1B",
+        gray: colorPalette.gray,
+        form: {
+          title: colorPalette.gray["700"],
+          description: colorPalette.gray["400"],
         },
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

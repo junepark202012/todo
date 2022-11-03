@@ -1,11 +1,12 @@
-import { ReactElement } from "react";
-import Navbar from "./Navbar";
+import { ReactNode } from "react";
+import MainContainer from "@/components/MainContainer";
 
-export default function Layout({ children }: { children: ReactElement }) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
-      <Navbar />
-      <main>{children}</main>
+      <MainContainer>
+        <main>{children}</main>
+      </MainContainer>
     </>
   );
 }
