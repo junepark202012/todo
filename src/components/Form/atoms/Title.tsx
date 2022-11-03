@@ -1,10 +1,19 @@
+import { useForm } from "react-hook-form";
+
 type TitleProps = {
   label: string;
   id: string;
   description?: string;
+  reactHookForm: ReturnType<typeof useForm>;
 };
 
-export default function Title({ label, description, id }: TitleProps) {
+export default function Title({
+  label,
+  description,
+  id,
+  reactHookForm,
+}: TitleProps) {
+  const { register } = reactHookForm;
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-form-label">
@@ -12,6 +21,7 @@ export default function Title({ label, description, id }: TitleProps) {
       </label>
       <div className="mt-1">
         <input
+          {...register(id)}
           type="text"
           name={id}
           id={id}

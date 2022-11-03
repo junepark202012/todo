@@ -1,9 +1,13 @@
+import { useForm } from "react-hook-form";
+
 type TextAreaProps = {
   label: string;
   id: string;
+  reactHookForm: ReturnType<typeof useForm>;
 };
 
-export default function TextArea({ label, id }: TextAreaProps) {
+export default function TextArea({ label, id, reactHookForm }: TextAreaProps) {
+  const { register } = reactHookForm;
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-form-label">
@@ -11,6 +15,7 @@ export default function TextArea({ label, id }: TextAreaProps) {
       </label>
       <div className="mt-1">
         <textarea
+          {...register(id)}
           rows={4}
           name={id}
           id={id}
