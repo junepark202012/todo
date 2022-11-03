@@ -14,6 +14,7 @@ export default function Title({
   reactHookForm,
 }: TitleProps) {
   const { register } = reactHookForm;
+
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-form-label">
@@ -21,7 +22,13 @@ export default function Title({
       </label>
       <div className="mt-1">
         <input
-          {...register(id)}
+          {...register(id, {
+            required: "This field is required",
+            minLength: {
+              value: 3,
+              message: "This field must be at least 3 characters",
+            },
+          })}
           type="text"
           name={id}
           id={id}

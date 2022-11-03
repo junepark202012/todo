@@ -1,16 +1,21 @@
 import { ReactNode } from "react";
-import { useForm, UseFormReturn } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import type { ReactHookForm } from "@/components/Form/Form";
 
 type FormContainerProps = {
   children: ReactNode;
-  reactHookForm: ReturnType<typeof useForm>;
+  reactHookForm: ReactHookForm;
 };
 
 export default function FormContainer({
   children,
   reactHookForm,
 }: FormContainerProps) {
-  const { handleSubmit } = reactHookForm;
+  const {
+    handleSubmit,
+    formState: { errors },
+  } = reactHookForm;
+
   return (
     <div className="mx-auto max-w-3xl overflow-hidden rounded-lg bg-white shadow">
       <form
