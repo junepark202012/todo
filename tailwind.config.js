@@ -15,6 +15,18 @@ const colorPalette = {
     800: "#393937",
     900: "#1D1C1B",
   },
+  bistre: {
+    50: "#F4ECE2",
+    100: "#E7D6C0",
+    200: "#CFAD82",
+    300: "#B48446",
+    400: "#76562D",
+    500: "#392A16",
+    600: "#2C2011",
+    700: "#21180D",
+    800: "#161009",
+    900: "#0B0804",
+  },
 };
 
 /** @type {import('tailwindcss').Config} */
@@ -34,14 +46,14 @@ module.exports = {
         ],
       },
       colors: {
-        gray: colorPalette.gray,
+        ...colorPalette,
         form: {
           border: colorPalette.gray["300"],
           description: colorPalette.gray["400"],
-          focus: colorPalette.gray["600"],
+          focusBorder: colorPalette.gray["500"],
           placeholder: colorPalette.gray["300"],
           text: colorPalette.gray["900"],
-          title: colorPalette.gray["700"],
+          label: colorPalette.gray["700"],
         },
         primary: {
           default: colorPalette.gray["900"],

@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="mt-4 max-w-7xl px-4 py-12 sm:mt-6 sm:py-[4.5rem] sm:px-6 lg:px-8">
+    <div className="mt-4 max-w-7xl px-4 py-8 sm:mt-6 sm:py-10 sm:px-5 lg:py-14 lg:px-7">
       <div className="text-center">
         <h2 className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
           TODOs
