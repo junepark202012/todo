@@ -17,7 +17,7 @@ export default function Title({ label, description }: TitleProps) {
           type="text"
           name="title"
           id="title"
-          className="block w-full rounded-md border-gray-300 placeholder-gray-300 shadow-sm focus:border-gray-600 focus:ring-gray-600 sm:text-sm"
+          className="block w-full rounded-md border-form-border text-form-text placeholder-form-placeholder shadow-sm focus:border-form-focus focus:ring-form-focus sm:text-sm"
           placeholder="Buy milk"
           aria-describedby="todo-title"
         />

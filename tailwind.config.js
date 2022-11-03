@@ -1,5 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultColors = require("tailwindcss/colors");
+
 const colorPalette = {
   gray: {
     50: "#F3F2F2",
@@ -34,8 +36,20 @@ module.exports = {
       colors: {
         gray: colorPalette.gray,
         form: {
-          title: colorPalette.gray["700"],
+          border: colorPalette.gray["300"],
           description: colorPalette.gray["400"],
+          focus: colorPalette.gray["600"],
+          placeholder: colorPalette.gray["300"],
+          text: colorPalette.gray["900"],
+          title: colorPalette.gray["700"],
+        },
+        primary: {
+          default: colorPalette.gray["900"],
+          light: colorPalette.gray["600"],
+        },
+        background: {
+          default: colorPalette.gray["50"],
+          white: defaultColors.white,
         },
       },
     },
