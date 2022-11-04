@@ -1,10 +1,12 @@
-import { useForm } from "react-hook-form";
+import type { ReactHookForm } from "@/components/Form/Form";
+import { FormId } from "@/components/Form/Form";
+import { RegisterOptions } from "react-hook-form";
 
 type TitleProps = {
   label: string;
-  id: string;
+  id: FormId;
   description?: string;
-  reactHookForm: ReturnType<typeof useForm>;
+  reactHookForm: ReactHookForm;
 };
 
 export default function Title({
@@ -15,6 +17,16 @@ export default function Title({
 }: TitleProps) {
   const { register } = reactHookForm;
 
+  const minLength = 3;
+
+  const registerOptions: RegisterOptions = {
+    required: "This field is required",
+    minLength: {
+      value: minLength,
+      message: `This field must be at least ${minLength} characters`,
+    },
+  };
+
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-form-label">
@@ -22,20 +34,13 @@ export default function Title({
       </label>
       <div className="mt-1">
         <input
-          {...register(id, {
-            required: "This field is required",
-            minLength: {
-              value: 3,
-              message: "This field must be at least 3 characters",
-            },
-          })}
+          {...register(id, registerOptions)}
           type="text"
           name={id}
           id={id}
           className="block w-full rounded-md border-form-border text-form-text placeholder-form-placeholder shadow-sm focus:border-form-focusBorder focus:ring-form-focusBorder sm:text-sm"
           placeholder="Buy milk"
           aria-describedby="todo-title"
-          required
         />
       </div>
       {description ? (

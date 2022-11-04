@@ -1,9 +1,9 @@
-import { useForm } from "react-hook-form";
+import type { FormId, ReactHookForm } from "@/components/Form/Form";
 
 type TextAreaProps = {
   label: string;
-  id: string;
-  reactHookForm: ReturnType<typeof useForm>;
+  id: FormId;
+  reactHookForm: ReactHookForm;
 };
 
 export default function TextArea({ label, id, reactHookForm }: TextAreaProps) {

@@ -4,15 +4,17 @@ import TextArea from "@/components/Form/atoms/TextArea";
 import SubmitButton from "@/components/Form/atoms/SubmitButton";
 import { useForm } from "react-hook-form";
 
-type FormData = {
+export type FormInputs = {
   title: string;
   details: string;
 };
 
-export type ReactHookForm = typeof useForm<FormData>;
+export type FormId = keyof FormInputs;
+
+export type ReactHookForm = ReturnType<typeof useForm<FormInputs>>;
 
 export default function Form() {
-  const reactHookForm = useForm<FormData>();
+  const reactHookForm = useForm<FormInputs>();
 
   return (
     <FormContainer reactHookForm={reactHookForm}>
