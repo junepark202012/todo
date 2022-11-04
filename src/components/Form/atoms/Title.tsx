@@ -1,6 +1,7 @@
 import type { ReactHookForm } from "@/components/Form/Form";
 import { FormId } from "@/components/Form/Form";
 import { RegisterOptions } from "react-hook-form";
+import { useEffect, useState } from "react";
 
 type TitleProps = {
   label: string;
@@ -15,9 +16,12 @@ export default function Title({
   id,
   reactHookForm,
 }: TitleProps) {
-  const { register } = reactHookForm;
+  const {
+    register,
+    formState: { errors },
+  } = reactHookForm;
 
-  const minLength = 3;
+  const minLength = 2;
 
   const registerOptions: RegisterOptions = {
     required: "This field is required",
@@ -40,9 +44,12 @@ export default function Title({
           id={id}
           className="block w-full rounded-md border-form-border text-form-text placeholder-form-placeholder shadow-sm focus:border-form-focusBorder focus:ring-form-focusBorder sm:text-sm"
           placeholder="Buy milk"
-          aria-describedby="todo-title"
+          aria-describedby={errors.title ? "todo-error" : undefined}
         />
       </div>
+      <p className="mt-2 text-sm text-red-600" id="email-error">
+        {errors.title?.message}
+      </p>
       {description ? (
         <p
           className="mt-2 text-sm text-form-description"
