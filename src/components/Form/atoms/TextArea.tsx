@@ -19,7 +19,7 @@ export default function TextArea({ label, id, reactHookForm }: TextAreaProps) {
           rows={4}
           name={id}
           id={id}
-          className="block w-full resize-none overflow-auto rounded-md border-form-border text-form-text placeholder-form-placeholder shadow-sm focus:border-form-focusBorder focus:ring-form-focusBorder sm:text-sm"
+          className="block w-full resize-none overflow-auto rounded-md border-form-border-default text-form-text placeholder-form-placeholder shadow-sm focus:border-form-focusBorder-default focus:ring-form-focusBorder-default sm:text-sm"
           defaultValue={""}
           placeholder="I need to buy milk for my coffee."
         />

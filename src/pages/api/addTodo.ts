@@ -8,5 +8,4 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   } else {
     res.status(405).send({ message: "Only POST requests are allowed." });
   }
-  res.status(200).json({ name: "John Doe" });
 }
