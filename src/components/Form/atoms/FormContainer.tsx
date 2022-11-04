@@ -13,7 +13,17 @@ export default function FormContainer({
 }: FormContainerProps) {
   const { handleSubmit } = reactHookForm;
 
-  const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    const res = await fetch("/api/addTodo", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    console.log(res);
+  };
 
   return (
     <div className="mx-auto max-w-3xl overflow-hidden rounded-lg bg-white shadow">
