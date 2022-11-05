@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
-import type { ReactHookForm, FormInputs } from "@/components/Form/Form";
+import type { ReactHookForm } from "@/components/Form/Form";
 import { SubmitHandler } from "react-hook-form";
+import { Todo } from "@/types";
 
 type FormContainerProps = {
   children: ReactNode;
@@ -13,7 +14,7 @@ export default function FormContainer({
 }: FormContainerProps) {
   const { handleSubmit } = reactHookForm;
 
-  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+  const onSubmit: SubmitHandler<Todo> = async (data) => {
     const res = await fetch("/api/addTodo", {
       method: "POST",
       headers: {

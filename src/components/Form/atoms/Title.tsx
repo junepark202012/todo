@@ -1,7 +1,6 @@
 import type { ReactHookForm } from "@/components/Form/Form";
 import { FormId } from "@/components/Form/Form";
 import { RegisterOptions } from "react-hook-form";
-import { useEffect, useState } from "react";
 import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
 
 type TitleProps = {
