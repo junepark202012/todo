@@ -44,7 +44,7 @@ export default function Title({
           name={id}
           id={id}
           className={
-            `block w-full rounded-md  text-form-text placeholder-form-placeholder shadow-sm  sm:text-sm` +
+            `block w-full rounded-md text-form-text placeholder-form-placeholder shadow-sm  sm:text-sm` +
             `${
               errors.title
                 ? "border-form-border-error focus:border-form-focusBorder-error focus:ring-form-focusBorder-error"

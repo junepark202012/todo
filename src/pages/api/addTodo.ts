@@ -5,6 +5,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     // Process a POST request
     console.log(req.body);
+    res.status(200).json(req.body);
   } else {
     res.status(405).send({ message: "Only POST requests are allowed." });
   }
