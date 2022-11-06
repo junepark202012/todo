@@ -1,0 +1,11 @@
+.inputDefault {
+  @apply block rounded-md text-form-text placeholder-form-placeholder shadow-sm  sm:text-sm;
+}
+
+.inputIsError {
+  @apply border-form-border-error focus:border-form-focusBorder-error focus:ring-form-focusBorder-error;
+}
+
+.inputIsNotError {
+  @apply border-form-border-default focus:border-form-focusBorder-default focus:ring-form-focusBorder-default;
+}

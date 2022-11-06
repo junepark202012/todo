@@ -38,7 +38,7 @@ module.exports = {
         form: {
           border: {
             default: colorPalette.gray["300"],
-            error: defaultColors.red["200"],
+            error: defaultColors.red["400"],
           },
           description: colorPalette.gray["400"],
           focusBorder: {

@@ -1,6 +1,7 @@
 import type { FormId, ReactHookForm } from "@/components/Form/Form";
 import { RegisterOptions } from "react-hook-form";
 import { useState } from "react";
+import styles from "@/components/Form/styles/form.module.css";
 
 type TextAreaProps = {
   label: string;
@@ -42,14 +43,11 @@ export default function TextArea({ label, id, reactHookForm }: TextAreaProps) {
           rows={4}
           name={id}
           id={id}
-          className={
-            `block w-full resize-none overflow-auto rounded-md  text-form-text placeholder-form-placeholder shadow-sm sm:text-sm` +
-            `${
-              errors.details
-                ? "border-form-border-error focus:border-form-focusBorder-error focus:ring-form-focusBorder-error"
-                : "border-form-border-default focus:border-form-focusBorder-default focus:ring-form-focusBorder-default "
-            }`
-          }
+          className={[
+            "w-full",
+            styles.inputDefault,
+            errors.details ? styles.inputIsError : styles.inputIsNotError,
+          ].join(" ")}
           defaultValue={""}
           placeholder="I need to buy milk for my coffee."
           onChange={(e) => setLength(e.target.value.length)}

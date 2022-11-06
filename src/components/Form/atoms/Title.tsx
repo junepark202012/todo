@@ -1,3 +1,4 @@
+import styles from "@/components/Form/styles/form.module.css";
 import type { ReactHookForm } from "@/components/Form/Form";
 import { FormId } from "@/components/Form/Form";
 import { RegisterOptions } from "react-hook-form";
@@ -42,14 +43,11 @@ export default function Title({
           type="text"
           name={id}
           id={id}
-          className={
-            `block w-full rounded-md text-form-text placeholder-form-placeholder shadow-sm  sm:text-sm` +
-            `${
-              errors.title
-                ? "border-form-border-error focus:border-form-focusBorder-error focus:ring-form-focusBorder-error"
-                : "border-form-border-default focus:border-form-focusBorder-default focus:ring-form-focusBorder-default "
-            }`
-          }
+          className={[
+            "w-full",
+            styles.inputDefault,
+            errors.title ? styles.inputIsError : styles.inputIsNotError,
+          ].join(" ")}
           placeholder="Buy milk"
           aria-describedby={errors.title ? "todo-error" : undefined}
         />
