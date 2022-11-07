@@ -4,6 +4,7 @@ import TextArea from "@/components/Form/atoms/TextArea";
 import SubmitButton from "@/components/Form/atoms/SubmitButton";
 import { useForm } from "react-hook-form";
 import { Todo } from "@/types";
+import { DueDate } from "@/components/Form/atoms/DueDate";
 
 export type FormId = keyof Todo;
 
@@ -16,7 +17,7 @@ export default function Form() {
     <FormContainer reactHookForm={reactHookForm}>
       <Title reactHookForm={reactHookForm} id="title" label="Title" />
       <TextArea reactHookForm={reactHookForm} id="details" label="Details" />
-      <input type="datetime-local" />
+      <DueDate />
       <SubmitButton text="Add" />
     </FormContainer>
   );
