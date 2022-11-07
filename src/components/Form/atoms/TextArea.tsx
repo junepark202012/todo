@@ -2,7 +2,7 @@ import type { FormId, ReactHookForm } from "@/components/Form/Form";
 import { RegisterOptions } from "react-hook-form";
 import { useState } from "react";
 import styles from "@/components/Form/styles/form.module.css";
-import { getClasses } from "@/utils/styles";
+import { classNames } from "@/utils/styles";
 
 type TextAreaProps = {
   label: string;
@@ -44,12 +44,10 @@ export default function TextArea({ label, id, reactHookForm }: TextAreaProps) {
           rows={4}
           name={id}
           id={id}
-          className={getClasses(
+          className={classNames(
             "w-full",
             styles.inputDefault,
-            Boolean(errors.details),
-            styles.inputIsError,
-            styles.inputIsNotError
+            errors.details ? styles.inputIsError : styles.inputIsNotError
           )}
           defaultValue={""}
           placeholder="I need to buy milk for my coffee."

@@ -3,7 +3,7 @@ import type { ReactHookForm } from "@/components/Form/Form";
 import { FormId } from "@/components/Form/Form";
 import { RegisterOptions } from "react-hook-form";
 import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
-import { getClasses } from "@/utils/styles";
+import { classNames } from "@/utils/styles";
 
 type TitleProps = {
   label: string;
@@ -44,12 +44,10 @@ export default function Title({
           type="text"
           name={id}
           id={id}
-          className={getClasses(
+          className={classNames(
             "w-full",
             styles.inputDefault,
-            Boolean(errors.title),
-            styles.inputIsError,
-            styles.inputIsNotError
+            errors.title ? styles.inputIsError : styles.inputIsNotError
           )}
           placeholder="Buy milk"
           aria-describedby={errors.title ? "todo-error" : undefined}
