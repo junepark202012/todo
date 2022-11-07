@@ -1,18 +1,14 @@
-import { getClasses } from "@/utils/styles";
-import styles from "@/components/Form/styles/form.module.css";
+import DatePicker from "react-datepicker";
+import { useState } from "react";
 
 export function DueDate() {
+  const [startDate, setStartDate] = useState(new Date());
+
   return (
-    <input
-      type="datetime-local"
-      className={getClasses(
-        "w-full",
-        styles.inputDefault,
-        false,
-        styles.inputIsError,
-        styles.inputIsNotError
-      )}
-      required
+    <DatePicker
+      showTimeSelect
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
     />
   );
 }
