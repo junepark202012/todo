@@ -17,7 +17,7 @@ export default function Form() {
     <FormContainer reactHookForm={reactHookForm}>
       <Title reactHookForm={reactHookForm} id="title" label="Title" />
       <TextArea reactHookForm={reactHookForm} id="details" label="Details" />
-      <div className="flex">
+      <div className="flex flex-col sm:flex-row">
         <DueDate />
         <SubmitButton text="Add" />
       </div>

@@ -19,7 +19,11 @@ export function DueDate() {
           setStartDate(date);
         }
       }}
-      className={classNames(styles.inputDefault, styles.inputIsNotError)}
+      className={classNames(
+        "w-full sm:w-auto",
+        styles.inputDefault,
+        styles.inputIsNotError
+      )}
       popperModifiers={[
         {
           name: "arrow",
