@@ -1,8 +1,5 @@
 export type Todo = {
   title: string;
   details: string;
+  dueDate: Date;
 };
-
-export type TodoList = Todo[];
-
-export type TodoWithId = Todo & { id: string };
