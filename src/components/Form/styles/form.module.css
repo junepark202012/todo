@@ -1,5 +1,5 @@
 .inputDefault {
-  @apply block rounded-md text-form-text placeholder-form-placeholder shadow-sm  sm:text-sm;
+  @apply block rounded-md text-form-text placeholder-form-placeholder shadow-sm sm:text-sm;
 }
 
 .inputIsError {

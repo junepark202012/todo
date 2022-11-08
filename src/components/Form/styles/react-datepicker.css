@@ -1,35 +1,3 @@
-/*.react-datepicker {*/
-/*  @apply flex;*/
-/*}*/
-
-/*.react-datepicker__time-container {*/
-/*}*/
-
-/*.react-datepicker__navigation--previous {*/
-/*  @apply overflow-hidden content-none;*/
-/*}*/
-
-/*.react-datepicker__time-list {*/
-/*  @apply max-h-52 overflow-y-scroll;*/
-/*}*/
-
-/*.react-datepicker__navigation {*/
-/*  @apply absolute;*/
-/*}*/
-
-/*.react-datepicker__week {*/
-/*  @apply grid grid-cols-7;*/
-/*}*/
-
-/*.react-datepicker__month {*/
-/*  @apply flex flex-col;*/
-/*}*/
-
-/*.react-datepicker__day-names {*/
-/*  @apply mt-6 grid grid-cols-7 text-xs leading-6 text-gray-500;*/
-/*}*/
-
-/*.react-datepicker__day {*/
-/*  @apply bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10;*/
-/*  @apply mx-auto flex h-7 w-7 items-center justify-center rounded-full;*/
-/*}*/
+.react-datepicker__tab-loop {
+  @apply my-0;
+}
