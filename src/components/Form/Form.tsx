@@ -4,7 +4,7 @@ import TextArea from "@/components/Form/atoms/TextArea";
 import SubmitButton from "@/components/Form/atoms/SubmitButton";
 import { useForm } from "react-hook-form";
 import { Todo } from "@/types";
-import DueDateController from "@/components/Form/atoms/DueDateController";
+import { DueDate } from "@/components/Form/atoms/DueDate";
 
 export type FormId = keyof Todo;
 
@@ -18,7 +18,7 @@ export default function Form() {
       <Title reactHookForm={reactHookForm} id="title" label="Title" />
       <TextArea reactHookForm={reactHookForm} id="details" label="Details" />
       {/*<div className="flex flex-col sm:flex-row">*/}
-      <DueDateController reactHookForm={reactHookForm} />
+      <DueDate reactHookForm={reactHookForm} />
       <SubmitButton text="Add" />
       {/*</div>*/}
     </FormContainer>
