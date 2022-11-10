@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Form />
-      <TodoTable />
+      <div className="mx-auto max-w-3xl">
+        <Form />
+        <TodoTable />
+      </div>
     </>
   );
 }

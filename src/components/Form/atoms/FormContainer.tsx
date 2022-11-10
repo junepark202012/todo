@@ -29,13 +29,11 @@ export default function FormContainer({
   };
 
   return (
-    <div className="mx-auto max-w-3xl overflow-hidden rounded-lg bg-white shadow">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col space-y-3 px-4 py-5 sm:p-6"
-      >
-        {children}
-      </form>
-    </div>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col space-y-3 overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6"
+    >
+      {children}
+    </form>
   );
 }
