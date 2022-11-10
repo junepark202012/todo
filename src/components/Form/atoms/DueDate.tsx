@@ -13,7 +13,8 @@ export function DueDate({ reactHookForm }: DueDateProps) {
     <Controller
       control={reactHookForm.control}
       name="dueDate"
-      render={({ field: { onChange, onBlur, value, ref } }) => (
+      defaultValue={new Date()}
+      render={({ field: { onChange, value } }) => (
         <DatePicker
           dateFormat="yyyy-MM-dd h:mm aa"
           onChange={onChange}
