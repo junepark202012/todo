@@ -1,24 +1,16 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import DoneDelete from "./molecules/ DoneDelete";
 import { TableHeader } from "@/components/TodoTable/molecules/TableHeader";
+import { TodoWithId } from "@/types";
 
-const people = [
+const todos: TodoWithId[] = [
   {
-    name: "Lindsay Walton",
-    title: "Front-end Developer",
-    email: "lindsay.walton@example.com",
+    id: "1",
+    title: "Learn Next.js",
+    details: "Learn Next.js and Tailwind CSS",
+    dueDate: "2022-11-10T13:30:00.177Z",
   },
-  {
-    name: "Lindsay Walton",
-    title: "Front-end Developer",
-    email: "lindsay.walton@example.com",
-  },
-  {
-    name: "Lindsay Walton",
-    title: "Front-end Developer",
-    email: "lindsay.walton@example.com",
-  },
-  // More people...
+  // More todos...
 ];
 
 function classNames(...classes) {
@@ -86,14 +78,14 @@ export default function Example() {
 
   useLayoutEffect(() => {
     const isIndeterminate =
-      selectedPeople.length > 0 && selectedPeople.length < people.length;
-    setChecked(selectedPeople.length === people.length);
+      selectedPeople.length > 0 && selectedPeople.length < todos.length;
+    setChecked(selectedPeople.length === todos.length);
     setIndeterminate(isIndeterminate);
     checkbox.current.indeterminate = isIndeterminate;
   }, [selectedPeople]);
 
   function toggleAll() {
-    setSelectedPeople(checked || indeterminate ? [] : people);
+    setSelectedPeople(checked || indeterminate ? [] : todos);
     setChecked(!checked && !indeterminate);
     setIndeterminate(false);
   }
@@ -112,7 +104,7 @@ export default function Example() {
                   onChange={toggleAll}
                 />
                 <tbody className="divide-y divide-gray-200 bg-white">
-                  {people.map((person) => (
+                  {todos.map((person) => (
                     <TableRow
                       key={person.email}
                       selectedPeople={selectedPeople}
