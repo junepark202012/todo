@@ -3,15 +3,15 @@ import FormContainer from "@/components/Form/atoms/FormContainer";
 import TextArea from "@/components/Form/atoms/TextArea";
 import SubmitButton from "@/components/Form/atoms/SubmitButton";
 import { useForm } from "react-hook-form";
-import { TodoInput } from "@/types";
+import { Todo } from "@/types";
 import { DueDate } from "@/components/Form/atoms/DueDate";
 
-export type FormId = keyof TodoInput;
+export type FormId = keyof Todo;
 
-export type ReactHookForm = ReturnType<typeof useForm<TodoInput>>;
+export type ReactHookForm = ReturnType<typeof useForm<Todo>>;
 
 export default function Form() {
-  const reactHookForm = useForm<TodoInput>();
+  const reactHookForm = useForm<Todo>();
 
   return (
     <FormContainer reactHookForm={reactHookForm}>

@@ -6,4 +6,4 @@ export type Todo = {
 
 export type TodoWithId = Todo & { id: string };
 
-export type TodoInput = Todo & { dueDate: string };
+export type TodoJSON = Omit<Todo, "dueDate"> & { dueDate: string };

@@ -14,30 +14,33 @@ export function DueDate({ reactHookForm }: DueDateProps) {
       control={reactHookForm.control}
       name="dueDate"
       defaultValue={new Date()}
-      render={({ field: { onChange, value } }) => (
-        <DatePicker
-          dateFormat="yyyy-MM-dd h:mm aa"
-          onChange={onChange}
-          selected={value}
-          showTimeSelect
-          timeCaption="time"
-          timeFormat="HH:mm"
-          timeIntervals={15}
-          className={classNames(
-            "w-full sm:w-auto",
-            styles.inputDefault,
-            styles.inputIsNotError
-          )}
-          popperModifiers={[
-            {
-              name: "arrow",
-              options: {
-                padding: ({ popper }) => popper.width / 2,
+      render={({ field: { onChange, value } }) => {
+        console.log(value);
+        return (
+          <DatePicker
+            dateFormat="yyyy-MM-dd h:mm aa"
+            onChange={onChange}
+            selected={value}
+            showTimeSelect
+            timeCaption="time"
+            timeFormat="HH:mm"
+            timeIntervals={15}
+            className={classNames(
+              "w-full sm:w-auto",
+              styles.inputDefault,
+              styles.inputIsNotError
+            )}
+            popperModifiers={[
+              {
+                name: "arrow",
+                options: {
+                  padding: ({ popper }) => popper.width / 2,
+                },
               },
-            },
-          ]}
-        />
-      )}
+            ]}
+          />
+        );
+      }}
     />
   );
 }

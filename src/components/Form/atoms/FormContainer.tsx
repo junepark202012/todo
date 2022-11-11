@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
 import type { ReactHookForm } from "@/components/Form/Form";
 import { SubmitHandler } from "react-hook-form";
-import { TodoInput, TodoWithId } from "@/types";
+import { Todo, TodoWithId } from "@/types";
 import { v4 as uuidv4 } from "uuid";
-import { parseISO } from "date-fns";
 
 type FormContainerProps = {
   children: ReactNode;
@@ -16,10 +15,9 @@ export default function FormContainer({
 }: FormContainerProps) {
   const { handleSubmit } = reactHookForm;
 
-  const onSubmit: SubmitHandler<TodoInput> = async (data) => {
-    console.log(data.dueDate);
-    const ISODate = parseISO(data.dueDate);
-    const todo: TodoWithId = { id: uuidv4(), ...data, dueDate: ISODate };
+  const onSubmit: SubmitHandler<Todo> = async (data) => {
+    console.log(data);
+    const todo: TodoWithId = { id: uuidv4(), ...data, dueDate: data.dueDate };
     const res = await fetch("/api/addTodo", {
       method: "POST",
       headers: {

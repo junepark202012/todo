@@ -8,7 +8,7 @@ const todos: TodoWithId[] = [
     id: "1",
     title: "Learn Next.js",
     details: "Learn Next.js and Tailwind CSS",
-    dueDate: "2022-11-10T13:30:00.177Z",
+    dueDate: new Date(),
   },
   // More todos...
 ];
