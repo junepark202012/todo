@@ -4,7 +4,6 @@ import { forwardRef } from "react";
 type TableHeaderProps = {
   checked: boolean;
   onChange: () => void;
-  hec;
 };
 
 export const TableHeader = forwardRef<HTMLInputElement, TableHeaderProps>(
@@ -23,9 +22,9 @@ export const TableHeader = forwardRef<HTMLInputElement, TableHeaderProps>(
           </th>
           <th
             scope="col"
-            className="min-w-[12rem] py-3.5 pr-3 text-left text-sm font-semibold text-gray-900"
+            className="py-3.5 pr-3 text-left text-sm font-semibold text-gray-900"
           >
-            Name
+            Due Date
           </th>
           <th
             scope="col"
@@ -35,7 +34,7 @@ export const TableHeader = forwardRef<HTMLInputElement, TableHeaderProps>(
           </th>
           <th
             scope="col"
-            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+            className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell"
           >
             Details
           </th>
